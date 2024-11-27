@@ -1,3 +1,27 @@
+# tRPC Guide
+```
+.
+├── prisma # <-- if prisma is added
+│   └── [..]
+├── src
+│   ├── pages
+│   │   ├── _app.tsx # <-- add `withTRPC()`-HOC here
+│   │   ├── api
+│   │   │   └── trpc
+│   │   │       └── [trpc].ts # <-- tRPC HTTP handler
+│   │   └── [..]
+│   ├── server
+│   │   ├── routers
+│   │   │   ├── app.ts   # <-- main app router
+│   │   │   ├── post.ts  # <-- sub routers
+│   │   │   └── [..]
+│   │   ├── context.ts      # <-- create app context
+│   │   └── createRouter.ts # <-- router helper
+│   └── utils
+│       └── trpc.ts  # <-- your typesafe tRPC hooks
+└── [..]
+```
+
 # Mantine Next.js template
 
 This is a template for [Next.js](https://nextjs.org/) app router + [Mantine](https://mantine.dev/).
