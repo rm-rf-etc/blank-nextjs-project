@@ -4,6 +4,7 @@ import { Text, Title, Container } from '@mantine/core'
 import { ForgottenPassword } from '@/src/components/ForgottenPassword/ForgottenPassword'
 import { ColorSchemeToggle } from '@/src/components/ColorSchemeToggle/ColorSchemeToggle'
 import classes from './Welcome.module.css'
+import { trpc } from '@/src/utils/trpc'
 
 const Gradient: FC<PropsWithChildren> = ({ children }) => (
   <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
@@ -11,7 +12,7 @@ const Gradient: FC<PropsWithChildren> = ({ children }) => (
   </Text>
 )
 
-export function Welcome() {
+function WelcomeComponent() {
   return (
     <Container>
       <Container>
@@ -36,3 +37,5 @@ export function Welcome() {
     </Container>
   )
 }
+
+export const Welcome = trpc.withTRPC(WelcomeComponent)

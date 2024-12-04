@@ -4,7 +4,7 @@ import React from 'react'
 import { ColorSchemeScript, MantineProvider } from '@mantine/core'
 import { theme } from '@/theme'
 
-export default function RootLayout({ children }: { children: any }) {
+function RootLayout({ children }: { children: any }) {
   return (
     <html style={{ height: "100%" }} lang="en" suppressHydrationWarning>
       <head>
@@ -21,3 +21,5 @@ export default function RootLayout({ children }: { children: any }) {
     </html>
   )
 }
+
+export default RootLayout
