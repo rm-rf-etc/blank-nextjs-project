@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { Success, Failure } from '@/src/utils/monads'
+import { Success, Failure } from '@/utils/monads'
 import { UseTRPCMutationResult } from '@trpc/react-query/src/shared/hooks/types'
 import { TRPCClientErrorBase } from '@trpc/client'
 import { DefaultErrorShape } from '@trpc/server'

@@ -1,8 +1,8 @@
 // import * as trpcNext from '@trpc/server/adapters/next'
 import { TRPCError } from '@trpc/server'
-import { handlerForgotPassword } from '@/src/server/handlers/forgotPassword'
-import { isSuccess } from '@/src/utils/monads'
-import { router, publicProcedure } from '@/src/server/trpc'
+import { handlerForgotPassword } from '@/server/handlers/forgotPassword'
+import { isSuccess } from '@/utils/monads'
+import { router, publicProcedure } from '@/server/trpc'
 import { z } from 'zod'
 
 export const appRouter = router({

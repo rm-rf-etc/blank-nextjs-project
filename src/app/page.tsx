@@ -1,8 +1,8 @@
 'use server'
 import React from 'react'
 import { Group } from '@mantine/core'
-import { DoubleNavbar } from '@/src/components/DoubleNavbar/DoubleNavbar'
-import { Welcome } from '@/src/components/Welcome/Welcome'
+import { DoubleNavbar } from '@/components/DoubleNavbar/DoubleNavbar'
+import { Welcome } from '@/components/Welcome/Welcome'
 
 const MainPage = () => {
   return (

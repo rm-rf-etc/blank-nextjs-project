@@ -1,10 +1,10 @@
 'use client'
 import React, { FC, PropsWithChildren } from 'react'
 import { Text, Title, Container } from '@mantine/core'
-import { ForgottenPassword } from '@/src/components/ForgottenPassword/ForgottenPassword'
-import { ColorSchemeToggle } from '@/src/components/ColorSchemeToggle/ColorSchemeToggle'
+import { ForgottenPassword } from '@/components/ForgottenPassword/ForgottenPassword'
+import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle'
 import classes from './Welcome.module.css'
-import { trpc } from '@/src/utils/trpc'
+import { trpc } from '@/utils/trpc'
 
 const Gradient: FC<PropsWithChildren> = ({ children }) => (
   <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>

@@ -1,7 +1,7 @@
 import { httpBatchLink } from '@trpc/client'
 import { createTRPCNext } from '@trpc/next'
-import { useTrpcMutationPromisified } from '@/src/utils/useTrpcMutationPromisified'
-import type { AppRouter } from '@/src/server/routers/_app'
+import { useTrpcMutationPromisified } from '@/utils/useTrpcMutationPromisified'
+import type { AppRouter } from '@/server/routers/_app'
 
 const { VERCEL_URL, RENDER_INTERNAL_HOSTNAME, PORT } = process.env
 

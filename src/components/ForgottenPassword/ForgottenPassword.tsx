@@ -3,7 +3,7 @@ import { Notification } from '@mantine/core'
 import { rem, Affix, Button, TextInput, Group, Stack } from '@mantine/core'
 import { IconX, IconCheck } from '@tabler/icons-react'
 import { useField, isEmail } from '@mantine/form'
-import { trpc } from '@/src/utils/trpc'
+import { trpc } from '@/utils/trpc'
 
 const errorIcon = <IconX style={{ width: rem(20), height: rem(20) }} />
 const checkIcon = <IconCheck style={{ width: rem(20), height: rem(20) }} />
