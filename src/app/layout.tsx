@@ -1,8 +1,24 @@
 import '@mantine/core/styles.css'
-
-import React from 'react'
-import { ColorSchemeScript, MantineProvider } from '@mantine/core'
+import { MantineLogo } from '@mantinex/mantine-logo'
+import { Navbar } from '@/components/Navbar/Navbar'
+import {
+  Box,
+  Flex,
+  Title,
+  Group,
+  Center,
+  ColorSchemeScript,
+  MantineProvider,
+  AppShell,
+  AppShellHeader,
+  AppShellNavbar,
+  AppShellMain,
+} from '@mantine/core'
 import { theme } from '@/theme'
+import { ClientAppContext } from '@/components/ClientAppContext/ClientAppContext'
+import { Notifications } from '@/components/Notifications/Notifications'
+
+// <Grid h="100%" w="100%" c="auto 1fr">
 
 function RootLayout({ children }: { children: any }) {
   return (
@@ -16,7 +32,34 @@ function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body style={{ height: "100%" }}>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <AppShell
+            header={{ height: 60 }}
+            navbar={{
+              width: 66,
+              breakpoint: 'sm',
+              collapsed: { mobile: false },
+            }}
+            padding="md"
+          >
+            <AppShellHeader>
+              <Flex h="100%" w="66px" align="center">
+                <Center inline w="100%">
+                  <MantineLogo type="mark" size={30} />
+                </Center>
+              </Flex>
+            </AppShellHeader>
+            <AppShellNavbar pt="md">
+              <Navbar />
+            </AppShellNavbar>
+            <AppShellMain>
+              <ClientAppContext>
+                <Notifications />
+                {children}
+              </ClientAppContext>
+            </AppShellMain>
+          </AppShell>
+        </MantineProvider>
       </body>
     </html>
   )

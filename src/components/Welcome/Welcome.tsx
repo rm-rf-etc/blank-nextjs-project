@@ -1,41 +1,19 @@
 'use client'
-import React, { FC, PropsWithChildren } from 'react'
+import React from 'react'
 import { Text, Title, Container } from '@mantine/core'
-import { ForgottenPassword } from '@/components/ForgottenPassword/ForgottenPassword'
-import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle'
-import classes from './Welcome.module.css'
-import { trpc } from '@/utils/trpc'
+import { GradientText } from '@/components/GradientText/GradientText'
+import styles from '@/app/styles.module.css'
 
-const Gradient: FC<PropsWithChildren> = ({ children }) => (
-  <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
-    {children}
-  </Text>
-)
-
-function WelcomeComponent() {
+export default () => {
   return (
     <Container>
-      <Container>
-        <Title className={classes.title} ta="center" pt={50}>
-          Welcome to <Gradient>Mantine</Gradient>
-        </Title>
+      <Title className={styles.fatTitle} ta="center" pt={50}>
+        Welcome to <GradientText>Mantine</GradientText>
+      </Title>
 
-        <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-          This is Next.js
-        </Text>
-      </Container>
-
-      <Container size="xs" px="md">
-        <Container pt="md">
-          <ColorSchemeToggle />
-        </Container>
-
-        <Container>
-          <ForgottenPassword />
-        </Container>
-      </Container>
+      <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
+        This is Next.js
+      </Text>
     </Container>
   )
 }
-
-export const Welcome = trpc.withTRPC(WelcomeComponent)

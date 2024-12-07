@@ -1,16 +1,9 @@
-'use server'
-import React from 'react'
-import { Group } from '@mantine/core'
-import { DoubleNavbar } from '@/components/DoubleNavbar/DoubleNavbar'
-import { Welcome } from '@/components/Welcome/Welcome'
+'use client'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
-const MainPage = () => {
-  return (
-    <Group align="top" wrap="nowrap" style={{ height: '100%' }}>
-      <DoubleNavbar />
-      <Welcome />
-    </Group>
-  )
+export default () => {
+  const router = useRouter()
+  useEffect(() => router.push('/dashboard'), [])
+  return null
 }
-
-export default MainPage

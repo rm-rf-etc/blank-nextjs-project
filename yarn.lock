@@ -1831,7 +1831,7 @@
   resolved "https://registry.npmjs.org/@tanstack/query-core/-/query-core-4.36.1.tgz"
   integrity sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA==
 
-"@tanstack/react-query@^4.18.0", "@tanstack/react-query@^4.36.1":
+"@tanstack/react-query@^4.36.1":
   version "4.36.1"
   resolved "https://registry.npmjs.org/@tanstack/react-query/-/react-query-4.36.1.tgz"
   integrity sha512-y7ySVHFyyQblPl3J3eQBWpXZkliroki3ARnBKsdJchlgt7yJLRDUcf4B8soufgiYt3pEQIkBWBx1N9/ZPIeUWw==
@@ -1895,26 +1895,6 @@
   version "2.0.0"
   resolved "https://registry.npmjs.org/@tootallnate/once/-/once-2.0.0.tgz"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
-
-"@trpc/client@^10.45.2", "@trpc/client@10.45.2":
-  version "10.45.2"
-  resolved "https://registry.npmjs.org/@trpc/client/-/client-10.45.2.tgz"
-  integrity sha512-ykALM5kYWTLn1zYuUOZ2cPWlVfrXhc18HzBDyRhoPYN0jey4iQHEFSEowfnhg1RvYnrAVjNBgHNeSAXjrDbGwg==
-
-"@trpc/next@^10.45.2":
-  version "10.45.2"
-  resolved "https://registry.npmjs.org/@trpc/next/-/next-10.45.2.tgz"
-  integrity sha512-RSORmfC+/nXdmRY1pQ0AalsVgSzwNAFbZLYHiTvPM5QQ8wmMEHilseCYMXpu0se/TbPt9zVR6Ka2d7O6zxKkXg==
-
-"@trpc/react-query@^10.45.2", "@trpc/react-query@10.45.2":
-  version "10.45.2"
-  resolved "https://registry.npmjs.org/@trpc/react-query/-/react-query-10.45.2.tgz"
-  integrity sha512-BAqb9bGZIscroradlNx+Cc9522R+idY3BOSf5z0jHUtkxdMbjeGKxSSMxxu7JzoLqSIEC+LVzL3VvF8sdDWaZQ==
-
-"@trpc/server@^10.45.2", "@trpc/server@10.45.2":
-  version "10.45.2"
-  resolved "https://registry.npmjs.org/@trpc/server/-/server-10.45.2.tgz"
-  integrity sha512-wOrSThNNE4HUnuhJG6PfDRp4L2009KDVxsd+2VYH8ro6o/7/jwYZ8Uu5j+VaW+mOmc8EHerHzGcdbGNQSAUPgg==
 
 "@types/aria-query@^5.0.1":
   version "5.0.4"
@@ -6039,7 +6019,7 @@ next-auth@^4.24.10:
     preact-render-to-string "^5.1.19"
     uuid "^8.3.2"
 
-next@*, "next@^12.2.5 || ^13 || ^14 || ^15", "next@^13.5.0 || ^14.0.0 || ^15.0.0", next@15.0.1:
+"next@^12.2.5 || ^13 || ^14 || ^15", "next@^13.5.0 || ^14.0.0 || ^15.0.0", next@15.0.1:
   version "15.0.1"
   resolved "https://registry.npmjs.org/next/-/next-15.0.1.tgz"
   integrity sha512-PSkFkr/w7UnFWm+EP8y/QpHrJXMqpZzAXpergB/EqLPOh4SGPJXv1wj4mslr2hUZBAS9pX7/9YLIdxTv6fwytw==

@@ -1,8 +1,8 @@
-import { TRPC_ERROR_CODE_KEY } from '@trpc/server/src/rpc/codes'
+'use server'
 import { createTransport } from 'nodemailer'
 import { Result, Success, Failure } from '@/utils/monads'
 
-export async function handlerForgotPassword(email: string): Promise<Result<string, TRPC_ERROR_CODE_KEY>> {
+export async function actionSendForgotPasswordEmail(email: string): Promise<Result<string, string>> {
   if (!email || typeof email !== 'string') {
     return Failure('BAD_REQUEST')
   }
