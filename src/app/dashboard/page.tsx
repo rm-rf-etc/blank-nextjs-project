@@ -1,5 +1,10 @@
-import { StatsGroup } from '@/components/StatsGroup/StatsGroup'
+import { StatsRings } from '@/components/DashboardStats/StatsRings'
+import { StatsSegments } from '@/components/DashboardStats/StatsSegments'
+import { Group } from '@mantine/core'
 
 export default () => (
-  <StatsGroup />
+  <Group align='stretch'>
+    <StatsSegments />
+    <StatsRings />
+  </Group>
 )

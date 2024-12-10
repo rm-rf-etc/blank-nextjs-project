@@ -1,15 +1,15 @@
 'use client'
-import React, { useState, useCallback, createContext, PropsWithChildren } from 'react'
+import React, { createContext, PropsWithChildren, useCallback, useState } from 'react'
 
 export type Notice = {
   title: string
   message: string
 }
 const defaultContext = {
-  addNotice: (_: Notice) => { },
-  delNotice: (_: number) => { },
-  addError: (_: Notice) => { },
-  delError: (_: number) => { },
+  addNotice: (_: Notice) => {},
+  delNotice: (_: number) => {},
+  addError: (_: Notice) => {},
+  delError: (_: number) => {},
   notices: [] as Notice[],
   errors: [] as Notice[],
 }
@@ -37,14 +37,16 @@ export const ClientAppContext = ({ children }: PropsWithChildren) => {
   }, [])
 
   return (
-    <AppContext.Provider value={{
-      notices,
-      addNotice,
-      delNotice,
-      errors,
-      addError,
-      delError,
-    }}>
+    <AppContext.Provider
+      value={{
+        notices,
+        addNotice,
+        delNotice,
+        errors,
+        addError,
+        delError,
+      }}
+    >
       {children}
     </AppContext.Provider>
   )

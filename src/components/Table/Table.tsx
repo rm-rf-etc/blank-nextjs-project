@@ -1,7 +1,7 @@
 'use client'
-import { useState } from 'react'
-import cx from 'clsx'
 import { Avatar, Checkbox, Group, ScrollArea, Table, Text } from '@mantine/core'
+import cx from 'clsx'
+import { useState } from 'react'
 import classes from './Table.module.css'
 
 const data = [
@@ -104,9 +104,9 @@ export function TableWithSelections() {
           <Checkbox checked={selection.includes(item.id)} onChange={() => toggleRow(item.id)} />
         </Table.Td>
         <Table.Td>
-          <Group gap="sm">
+          <Group gap='sm'>
             <Avatar size={26} src={item.avatar} radius={26} />
-            <Text size="sm" fw={500}>
+            <Text size='sm' fw={500}>
               {item.name}
             </Text>
           </Group>
@@ -119,7 +119,7 @@ export function TableWithSelections() {
 
   return (
     <ScrollArea>
-      <Table verticalSpacing="sm">
+      <Table verticalSpacing='sm'>
         <Table.Thead>
           <Table.Tr>
             <Table.Th w={40}>

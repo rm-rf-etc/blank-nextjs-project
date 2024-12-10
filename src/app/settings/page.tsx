@@ -2,7 +2,7 @@ import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeTog
 import { Container } from '@mantine/core'
 
 export default () => (
-  <Container size="xs" px="md">
+  <Container size='xs' px='md'>
     <ColorSchemeToggle />
   </Container>
 )

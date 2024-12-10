@@ -12,7 +12,6 @@ export const Grid = ({
   r,
   w = '100%',
   h = '100%',
-
 }: Props) => {
   const style: Record<string, string> = {
     height: h,

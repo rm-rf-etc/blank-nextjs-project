@@ -1,15 +1,8 @@
 'use client'
-import { useState, ForwardRefExoticComponent, RefAttributes } from 'react'
-import {
-  IconGauge,
-  IconSettings,
-  IconUser,
-  IconProps,
-  Icon,
-  IconMessageExclamation,
-} from '@tabler/icons-react'
 import { Tooltip, UnstyledButton } from '@mantine/core'
+import { Icon, IconGauge, IconMessageExclamation, IconProps, IconSettings, IconUser } from '@tabler/icons-react'
 import { useRouter } from 'next/navigation'
+import { ForwardRefExoticComponent, RefAttributes, useState } from 'react'
 import styles from './Navbar.module.css'
 
 type LinkModel = {
@@ -33,7 +26,7 @@ export function Navbar() {
       {mainLinksMockdata.map((link) => (
         <Tooltip
           label={link.label}
-          position="right"
+          position='right'
           withArrow
           transitionProps={{ duration: 0 }}
           key={link.label}

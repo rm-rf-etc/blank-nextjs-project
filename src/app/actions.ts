@@ -26,6 +26,7 @@ export async function actionSendForgotPasswordEmail(email: string): Promise<Resu
 
     return Success(`Email sent to ${email}`)
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error sending email:', error)
     return Failure('INTERNAL_SERVER_ERROR')
   }
