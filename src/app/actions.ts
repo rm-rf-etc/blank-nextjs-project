@@ -1,25 +1,31 @@
 'use server'
+import { Failure, Result, Success } from '@/utils/monads'
+import { PrismaClient, User } from '@prisma/client'
 import { createTransport } from 'nodemailer'
-import { Result, Success, Failure } from '@/utils/monads'
 
-export async function actionSendForgotPasswordEmail(email: string): Promise<Result<string, string>> {
+const prisma = new PrismaClient()
+
+export async function actionSendForgotPasswordEmail(
+  email: string,
+): Promise<Result<string, string>> {
   if (!email || typeof email !== 'string') {
     return Failure('BAD_REQUEST')
   }
+  const {
+    EMAIL_SERVER_PORT,
+    EMAIL_SERVER_HOST: host,
+    EMAIL_SERVER_USER: user,
+    EMAIL_SERVER_PASS: pass,
+    EMAIL_SERVER_FROM: from,
+  } = process.env
+  const port = Number(EMAIL_SERVER_PORT)
 
   try {
-    const transporter = createTransport({
-      host: process.env.EMAIL_SERVER_HOST,
-      port: Number(process.env.EMAIL_SERVER_PORT),
-      auth: {
-        user: process.env.EMAIL_SERVER_USER,
-        pass: process.env.EMAIL_SERVER_PASS,
-      },
-    })
+    const transporter = createTransport({ host, port, auth: { user, pass } })
 
     await transporter.sendMail({
       to: email,
-      from: process.env.EMAIL_SERVER_FROM,
+      from,
       subject: 'Test Email',
       text: 'This is a test email.',
     })
@@ -30,4 +36,21 @@ export async function actionSendForgotPasswordEmail(email: string): Promise<Resu
     console.error('Error sending email:', error)
     return Failure('INTERNAL_SERVER_ERROR')
   }
+}
+
+export async function actionAccountLookup(email: string): Promise<Result<User | null, string>> {
+  if (!email || typeof email !== 'string') {
+    return Failure('BAD_REQUEST')
+  }
+  try {
+    return Success(
+      await prisma.user.findUnique({ where: { email } }),
+    )
+  } catch (error) {
+    return Failure(typeof error === 'string' ? error : 'INTERNAL_SERVER_ERROR')
+  }
+}
+
+export async function actionGetAllUsers(): Promise<User[]> {
+  return prisma.user.findMany()
 }

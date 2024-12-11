@@ -11,10 +11,12 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  posts Post[]
+  id     Int     @id @default(autoincrement())
+  email  String  @unique
+  name   String?
+  avatar String? @default("https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png")
+  job    String  @default("Engineer")
+  posts  Post[]
 }
 
 model Post {

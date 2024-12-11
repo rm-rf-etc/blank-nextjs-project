@@ -37,7 +37,7 @@ function RootLayout({ children }: PropsWithChildren) {
             navbar={{
               width: 66,
               breakpoint: 'sm',
-              collapsed: { mobile: false },
+              collapsed: { mobile: false, desktop: false },
             }}
             padding='md'
           >

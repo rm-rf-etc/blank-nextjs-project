@@ -1,3 +1,3 @@
-import { TableWithSelections } from '@/components/Table/Table'
+import TableWithSelections from '@/components/UsersTable'
 
 export default () => <TableWithSelections />

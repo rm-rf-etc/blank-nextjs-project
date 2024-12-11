@@ -1,10 +1,10 @@
 import { StatsRings } from '@/components/DashboardStats/StatsRings'
 import { StatsSegments } from '@/components/DashboardStats/StatsSegments'
-import { Group } from '@mantine/core'
+import styles from './page.module.css'
 
 export default () => (
-  <Group align='stretch'>
+  <div className={styles.grid}>
     <StatsSegments />
     <StatsRings />
-  </Group>
+  </div>
 )
